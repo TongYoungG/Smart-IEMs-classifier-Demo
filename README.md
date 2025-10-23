@@ -1,3 +1,5 @@
 Smart-IEMs classifier: a deep learning model using temporal bone CT region segmentation and 3D-ResNet to diagnose complicated inner ear malformations.
 This code is implemented by Pytorch 1.10.1.
 You can just run "python demo.py" and get the left/right side IEM subtype or Normal result.
+The test niifile can be download in [Baidu]( https://pan.baidu.com/s/1sOn37BfYwLgNjp7zsDgN9Q?pwd=jkji) 提取码: jkji.
+Thanks for the brilliant work [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) and [MedicalNet](https://github.com/Tencent/MedicalNet).

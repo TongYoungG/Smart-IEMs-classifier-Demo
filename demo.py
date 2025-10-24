@@ -92,7 +92,7 @@ if __name__ == '__main__':
     IEM_class_name = ['CA_RO_CLA','CC','CH','IP-1','IP-2','VSCM','CCAA']
 
     # test_imgfile
-    nii_filepath = './nii_test_file/IP-2/BAI CHAO LE MEN_Y3840475_20181121_UIH_201.nii.gz'    
+    nii_filepath = './nii_test_file/IP-2/test-IP2.nii.gz'    
     # tb det model init 
     tb_det_model_path = "./weights/yolox-tb-detection.pth"
     predictor = init_tb_detection_model(tb_det_model_path)
@@ -132,4 +132,5 @@ if __name__ == '__main__':
                 cls_mpred = torch.argmax(cls_mout,dim=1).item()
                 cls_pred_str = IEM_class_name[cls_mpred]
                 
+
         print("{} ear temporal bone IEM classification results: {}".format(ear_side,cls_pred_str))

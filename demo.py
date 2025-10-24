@@ -99,8 +99,8 @@ if __name__ == '__main__':
     tb_psize = [50,50,50] # temporal bone phy size (mm)
     
     # IEM cls model init
-    # IEM_2cls_model_path = "./weights/resnet_34_epoch_55_batch_0.pth.tar"
-    # IEM_2Classfier, sets_2cls = IEM_Cls_model_init(IEM_2cls_model_path,n_class=2)
+    IEM_2cls_model_path = "./weights/IEM-2-classifier.tar"
+    IEM_2Classfier, sets_2cls = IEM_Cls_model_init(IEM_2cls_model_path,n_class=2)
     
     IEM_multicls_model_path = "./weights/IEM-multi-classifier.tar"
     IEM_MlClassfier,sets_mcls = IEM_Cls_model_init(IEM_multicls_model_path,n_class=8)
@@ -122,9 +122,9 @@ if __name__ == '__main__':
             img_tensor = img_tensor.cuda()
         input_var = torch.autograd.Variable(img_tensor)  
         with torch.no_grad():
-            # cls_2out = IEM_2Classfier(input_var)
-            # cls_2pred = torch.argmax(cls_2out,dim=1).item()
-            cls_2pred = 1  # For demo purpose, assume all are IEM
+            cls_2out = IEM_2Classfier(input_var)
+            cls_2pred = torch.argmax(cls_2out,dim=1).item()
+            # cls_2pred = 1  # For demo purpose, assume all are IEM
             if cls_2pred == 0:
                 cls_pred_str = 'Non-IEM'
             else:
